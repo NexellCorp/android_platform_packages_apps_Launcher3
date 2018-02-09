@@ -50,6 +50,12 @@ LOCAL_MIN_SDK_VERSION := 21
 LOCAL_PACKAGE_NAME := Launcher3
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2
 
+ifeq ($(QUICKBOOT), 1)
+LOCAL_MANIFEST_FILE := AndroidManifestQuickboot.xml
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+endif
+
 LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/AndroidManifest-common.xml
 
 LOCAL_JACK_COVERAGE_INCLUDE_FILTER := com.android.launcher3.*
