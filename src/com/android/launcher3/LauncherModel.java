@@ -37,7 +37,7 @@ import android.os.Looper;
 import android.os.Parcelable;
 import android.os.Process;
 import android.os.SystemClock;
-import android.os.Trace;
+// import android.os.Trace;
 import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
@@ -1655,9 +1655,9 @@ public class LauncherModel extends BroadcastReceiver
         }
 
         private void loadWorkspace() {
-            if (LauncherAppState.PROFILE_STARTUP) {
-                Trace.beginSection("Loading Workspace");
-            }
+            // if (LauncherAppState.PROFILE_STARTUP) {
+            //     Trace.beginSection("Loading Workspace");
+            // }
             final long t = DEBUG_LOADERS ? SystemClock.uptimeMillis() : 0;
 
             final Context context = mContext;
@@ -2340,9 +2340,9 @@ public class LauncherModel extends BroadcastReceiver
                     }
                 }
             }
-            if (LauncherAppState.PROFILE_STARTUP) {
-                Trace.endSection();
-            }
+            // if (LauncherAppState.PROFILE_STARTUP) {
+            //     Trace.endSection();
+            // }
         }
 
         /**

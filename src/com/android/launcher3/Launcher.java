@@ -59,7 +59,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
-import android.os.Trace;
+// import android.os.Trace;
 import android.os.UserHandle;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -382,9 +382,9 @@ public class Launcher extends Activity
                     .penaltyDeath()
                     .build());
         }
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.beginSection("Launcher-onCreate");
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.beginSection("Launcher-onCreate");
+        // }
 
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.preOnCreate();
@@ -435,9 +435,9 @@ public class Launcher extends Activity
         mSavedState = savedInstanceState;
         restoreState(mSavedState);
 
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.endSection();
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.endSection();
+        // }
 
         // We only load the page synchronously if the user rotates (or triggers a
         // configuration change) while launcher is in the foreground
@@ -3549,9 +3549,9 @@ public class Launcher extends Activity
      * Implementation of the method from LauncherModel.Callbacks.
      */
     public void startBinding() {
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.beginSection("Starting page bind");
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.beginSection("Starting page bind");
+        // }
         setWorkspaceLoading(true);
 
         // Clear the workspace because it's going to be rebound
@@ -3562,9 +3562,9 @@ public class Launcher extends Activity
         if (mHotseat != null) {
             mHotseat.resetLayout();
         }
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.endSection();
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.endSection();
+        // }
     }
 
     @Override
@@ -3978,9 +3978,9 @@ public class Launcher extends Activity
         if (waitUntilResume(r)) {
             return;
         }
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.beginSection("Page bind completed");
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.beginSection("Page bind completed");
+        // }
         if (mSavedState != null) {
             if (!mWorkspace.hasFocus()) {
                 mWorkspace.getChildAt(mWorkspace.getCurrentPage()).requestFocus();
@@ -4004,9 +4004,9 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.finishBindingItems(false);
         }
-        if (LauncherAppState.PROFILE_STARTUP) {
-            Trace.endSection();
-        }
+        // if (LauncherAppState.PROFILE_STARTUP) {
+        //     Trace.endSection();
+        // }
     }
 
     private boolean canRunNewAppsAnimation() {
